@@ -3,12 +3,14 @@ import { Component } from "react";
 import TOC from "./component/TOC";
 import Subject from "./component/Subject";
 import Content from "./component/Content";
+import Control from "./component/Control";
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
       mode: "welcome",
+      selected_content_id: 2,
       subject: { title: "WEB", sub: "World Wide Web!" },
       welcome: { title: "welcome", desc: "hello react!!" },
       contents: [
@@ -27,8 +29,16 @@ class App extends Component {
       _title = this.state.welcome.title;
       _desc = this.state.welcome.desc;
     } else if (this.state.mode === "read") {
-      _title = this.state.contents[0].title;
-      _desc = this.state.contents[0].desc;
+      let i = 0;
+      while (i < this.state.contents.length) {
+        let data = this.state.contents[i];
+        if (data.id === this.state.selected_content_id) {
+          _title = this.state.contents[i].title;
+          _desc = this.state.contents[i].desc;
+          break;
+        }
+        i += 1;
+      }
     }
 
     return (
@@ -44,11 +54,16 @@ class App extends Component {
         ></Subject>
 
         <TOC
-          onChangePage={function () {
-            this.setState({ mode: "read" });
+          onChangePage={function (id) {
+            this.setState({ mode: "read", selected_content_id: Number(id) });
           }.bind(this)}
           data={this.state.contents}
         ></TOC>
+        <Control
+          onChangeMode={function (mode) {
+            this.setState({ mode });
+          }.bind(this)}
+        ></Control>
         <Content title={_title} desc={_desc}></Content>
       </div>
     );
