@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <table border="1">
+      <% for(let i =(obj.page*obj.page_num)-obj.page_num;
+      i<(obj.page*obj.page_num); i++){ if(i > obj.length) { i++; }else{ let
+      data= obj.rows[i]; %>
+      <tr>
+        <td><%= i +1 %></td>
+        <td><%= data.name</td>
+      </tr>
+      <% } } %>
+
+      <tr>
+        <td colspan="6">
+          <% for(let j = 0; j< obj.rows.length/ obj.page_num; j++) { %> [<a
+            href="/about/<%= j+1 %>"
+          >
+            <%= j+1 %> </a
+          >] <% } %>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

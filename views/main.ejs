@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link
+      href="https://fonts.googleapis.com/css?family=Lobster"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./main_view.css" />
+    <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+  </head>
+  <body>
+    <!-- <script>
+      alert(`<%= name %> <%= age%>님 환영`);
+    </script> -->
+    <header>
+      <nav id="header">
+        <a class="btn blue" href="/">홈</a>
+        <!-- 주소 뒤에 #blue 형식으로 붙게됨 -->
+        <a class="btn red" href="#red">자기 소개</a>
+        <a class="btn" href="">사진</a>
+        <a class="btn" href="qna">물어보세요</a>
+      </nav>
+      <h1 id="name" style="margin-bottom: 0">🙋‍♂️</h1>
+    </header>
+    <main>
+      <div class="main_div">
+        <h1>주태윤(Joo tae yoon🧑‍💻)</h1>
+        <h2>
+          <p style="border: 1px solid black">저는 이런 경험이 있습니다.</p>
+        </h2>
+        <h3 class="underline"><p>💻 JavaScript(node.js)</p></h3>
+        <p>🅴 Express.js 🐈 Nest.js</p>
+        <h3 class="underline">
+          <p>📚 API/라이브러리</p>
+        </h3>
+        <p>
+          💬Twilio(SMS문자 발송), 📧Nodemailer(이메일 발송), 🛂 Passport(JWT
+          인증)
+        </p>
+        <h3 class="underline">☁️ Cloud</h3>
+        <p>AWS EC2, AWS S3, AWS MediaConvert</p>
+        <h3 class="underline">🎸 오픈소스/etc</h3>
+        <p>
+          Ffmpeg, REST API, GraqphQL, Linux, Github, Git-flow, Nginx, Pm2, GCP,
+          AWS Rekognition, Web-Socket, docker
+        </p>
+
+        <h3 class="underline">📀 DB</h3>
+        <p>🍃mongoDB, 🐘PostgreSQL, 🐬MySQL, ♦️Rediss</p>
+
+        <h3 class="underline">🌉 ORM</h3>
+        <p>🍀mongoose, ™️TypeORM, 💎Prisma</p>
+      </div>
+      <div class="box">
+        <div>
+          <aside>
+            1️⃣ ✅ 저는 이걸 했어요❗️ <br />
+            - REST API 서버 <br />
+            - Amazon Transcribe 라이브러리 사용 <br />
+            - EC2 서버 셋팅 <br />
+            - GIT으로 형상관리 (GIT-FLOW방식) <br />
+            ✅ 저는 이걸 사용 했어요(express.js)😃 - S3, Amazon Transcribe, AWS
+            EC2, AWS Rekognition, AWS Lambda, GITHUB
+          </aside>
+        </div>
+      </div>
+    </main>
+    <script>
+      $(document).ready(function () {
+        window.scroll(function () {
+          if ($(this).scrollTop() > 200) {
+            $(".top").fadeIn();
+          } else {
+            $(".top").fadeOut();
+          }
+        });
+        $(".top").click(function () {
+          $("html, body").animate({ scrollTop: 0 }, 400);
+          return false;
+        });
+      });
+    </script>
+    <a href="#" class="top">fdasfsafsafasdf</a>
+    <footer>
+      <h3>vividjtj@gmail.com</h3>
+    </footer>
+  </body>
+</html>

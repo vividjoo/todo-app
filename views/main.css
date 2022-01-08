@@ -1,0 +1,20 @@
+* {
+  text-align: center;
+  position: relative;
+  top: 100px;
+}
+
+body {
+  background-color: black;
+}
+
+.date {
+  font-size: 30px;
+  color: white;
+}
+
+.time {
+  font-size: 30px;
+  color: white;
+  font-weight: bold;
+}

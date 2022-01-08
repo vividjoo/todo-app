@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="./main.css" />
+    <link
+      rel="shortcut icon"
+      href="https://img.etnews.com/photonews/2002/1274201_20200220145654_335_0001.jpg"
+      type="image/x-icon"
+    />
+
+    <title>title</title>
+  </head>
+  <body>
+    <script>
+      function setClock() {
+        let date = new Date();
+        let hour = date.getHours();
+        let min = date.getMinutes();
+        let sec = date.getSeconds();
+
+        let year = date.getFullYear();
+        let month = date.getMonth() + 1;
+        let day = date.getDate();
+        let am = "오전";
+        if (hour >= 12) {
+          am = "오후";
+          hour -= 12;
+        }
+        if (sec < 10) {
+          sec = "0" + sec;
+          Number(sec);
+        }
+
+        document.getElementById("time").innerHTML =
+          am + " " + hour + ":" + min + ":" + sec;
+        document.getElementById("date").innerHTML =
+          year + "년 " + month + "월 " + day + "일";
+      }
+
+      function init() {
+        setInterval(setClock, 1000);
+      }
+      init();
+    </script>
+    <a style="text-decoration: none" href="/main">
+      <div id="time" class="time"></div>
+      <div id="date" class="date"></div>
+    </a>
+  </body>
+</html>
